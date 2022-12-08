@@ -5,7 +5,11 @@
 # 
 # BMI = 체중(kg) / (키(m) x키(m))
 
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 6400811feb4dd3fd5b4cffc5645e5bd0389f8c1f
  
 # 키와 몸무게 scala입력
 height <- scan()
@@ -14,7 +18,11 @@ weight <- scan()
 
 
 # 몸무게 수치 변환
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 6400811feb4dd3fd5b4cffc5645e5bd0389f8c1f
 
 
 # BMI 계산
