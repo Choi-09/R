@@ -1,6 +1,6 @@
 # 데이터 정리 라이브러리 설치
-install.packages("tidyr")
-install.packages("dplyr")
+install.packages("tidyr")    # tidyr: 자료를 조건에 따라 배열을 바꾸는 함수를 제공
+install.packages("dplyr")    # dplyr: 데이터 처리 패키지. %>% 파이프라인으로 data.frame에서 자료를 조건에 따라 선택하고, 배열하고, 결합하고, 요약하는데 편리한 함수.
 library(tidyr)
 library(dplyr)
 
@@ -21,9 +21,9 @@ new
 # 파이프라인으로 데이터 가공 
 
 new2 <- member %>%
-        gather(key, value, namef:agem) %>%
-        separate(key, c("variable", "type"), -1) %>%
-        spread(variable, value)
+        gather(key, value, namef:agem) %>%       # namef 부터 agem까지의 member데이터를 key와 value로 모은다. gather: 여러 컬럼을 하나의 컬럼으로 모은다. 
+        separate(key, c("variable", "type"), -1) %>%    # key를 다시 "variable"과 "type"으로 나누는데 뒤에서 첫번째를 기준으로 나눈다.(-1)  separate: 
+        spread(variable, value)     # gather의 반대 방향으로, 세로형 데이터를 가로형으로 변형
 
 new2
 
