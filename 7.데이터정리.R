@@ -1,6 +1,6 @@
 # 데이터 정리 라이브러리 설치
-install.packages("tidyr")
-install.packages("dplyr")
+install.packages("tidyr")    # tidyr: 자료를 조건에 따라 배열을 바꾸는 함수를 제공
+install.packages("dplyr")    # dplyr: 데이터 처리 패키지. %>% 파이프라인으로 data.frame에서 자료를 조건에 따라 선택하고, 배열하고, 결합하고, 요약하는데 편리한 함수.
 library(tidyr)
 library(dplyr)
 
