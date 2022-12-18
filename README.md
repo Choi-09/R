@@ -222,7 +222,7 @@
 
 
 ## 6. 연산자
-   ![연산자](https://user-images.githubusercontent.com/51871037/208297959-4da71f46-6746-414e-bf25-c520c518a995.PNG)) 
+   ![연산자](https://user-images.githubusercontent.com/51871037/208297959-4da71f46-6746-414e-bf25-c520c518a995.PNG)
 
 
 ## 7. 제어문
