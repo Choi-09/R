@@ -118,6 +118,11 @@
    - 문자형 character
    - 논리형 logical
    - 복소수형 complex number
+   
+   - 결측값 NA
+   - 계산불가 NaN
+   - 존재x NULL
+   - 무한대 Inf / -Inf
 ```     
 #### 2) 벡터(vector)
   - 하나 이상의 원소로 이루어진 자료. 
