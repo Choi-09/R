@@ -112,6 +112,14 @@
      
   2) 벡터(vector)
      : 하나 이상의 원소로 이루어진 자료. 원소의 데이터 타입이 동일해야 함.
-     - c(val1, val2, val2, ...)
-     - c(
+     
+     (1) 벡터 생성
+         • c(val1, val2, val2, ...)
+         • n : m   # 연속된 정수 벡터 생성(n 부터 m 까지)
+     
+     (2) 함수를 이용한 벡터 생성
+         • rep(반복할 숫자, 반복횟수)   # rep(1,5) => [1] 1 1 1 1 1
+         • seq(시작, 끝, 간격)   # seq(0, 10, 2) => [1]  0  2  4  6  8 10
+         • seq(시작, 끝, length = n)   # seq(0, 10, length = 5) => [1]  0.0  2.5  5.0  7.5 10.0
+         • numeric / double / integer / character (length = n)   # character(length = 5) => [1] "" "" "" "" ""
 ```
