@@ -347,7 +347,7 @@
 #### 1) EDA(Exploratory Data Analysis, 탐색적 데이터 분석)
 + raw data 의 description, dictionary 를 통해 데이터의 각 column들과 row의 의미 이해하기.
 + 결측치 처리 및 데이터필터링.
-+ 누구나 이해하기 쉬운 시각화.
++ 누구나 이해하기 쉬운 시각화. <br>
 => bias = 0. 데이터를 있는 그대로 보고 분석하자! 
 ```
   (1) 파일(데이터) 읽어오기
