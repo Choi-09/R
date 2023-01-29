@@ -343,8 +343,8 @@
 <img src = https://user-images.githubusercontent.com/51871037/215321596-e3e97db9-16e2-4541-875b-a5d7b587d93f.png>
 <img src = https://user-images.githubusercontent.com/51871037/215321602-788cbb50-b808-4e58-a47f-55fdd44f9243.png>
 
-## 10. EDA, 패키지   #8
-#### 1). 분석절차
+## 10. EDA, 패키지
+#### 1) 분석절차
 ```
   (1) 파일(데이터) 읽어오기
       • data <- read.csv(path = '파일명.csv', header = T, sheet = 'Sheet2', fileEncoding = 'euc-kr', sep=',')
@@ -354,7 +354,7 @@
   
   (3) 데이터 확인
       • summary( )   # 기초통계값 확인
-      • head( )   # df의 처음 10개값 확인
+      • head( )   # df의 처음 6개값 확인
       • table( )   # 빈도표 확인
       • mode( )   # 데이터 내부 값의 형태
       • class( )   # 데이터 전체 타입
