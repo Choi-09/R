@@ -261,7 +261,7 @@
 
 
 ## 6. 연산자
-   ![연산자](https://user-images.githubusercontent.com/51871037/208297959-4da71f46-6746-414e-bf25-c520c518a995.PNG)
+   <img src = https://user-images.githubusercontent.com/51871037/208297959-4da71f46-6746-414e-bf25-c520c518a995.PNG>
 
 
 ## 7. 제어문
@@ -344,8 +344,77 @@
 <img src = https://user-images.githubusercontent.com/51871037/215321602-788cbb50-b808-4e58-a47f-55fdd44f9243.png>
 
 ## 10. EDA, 패키지   #8
-- 분석절차
+#### 1). 분석절차
+```
+  (1) 파일(데이터) 읽어오기
+      • data <- read.csv(path = '파일명.csv', header = T, sheet = 'Sheet2', fileEncoding = 'euc-kr', sep=',')
+     
+  (2) 데이터를 데이터프레임에 넣기
+      • df <- data.frame(data)
+  
+  (3) 데이터 확인
+      • summary( )   # 기초통계값 확인
+      • head( )   # df의 처음 10개값 확인
+      • table( )   # 빈도표 확인
+      • mode( )   # 데이터 내부 값의 형태
+      • class( )   # 데이터 전체 타입
+      • typeof( )   # 데이터 내부 값의 타입      
+  
+  (4) 데이터 전처리
+  
+     (1) 필요한 열 추출
+         • subset()
+           ex) df1 <- subset(df, df$컬럼명 == '컬럼값')
+         • df <- df[c('컬럼명1', '컬럼명2', '컬럼명3', ...)]
+           ex) df2 <- df[df$구분 == "역주행", ]
+           
+     (2) 열 명 수정
+         • names(df) <- c('컬럼명1', '컬럼명2', '컬럼명3', ...)
+           ex) names(df) <- c('암종별', '성별', '연령별', '2019년', '2019년(십만명)' )
+            
+     (3) 그룹핑
+         • df$컬럼명 <- ifelse( 조건1, True일때 값, False일때 값)
+           ex) df$불쾌지수단계 <- ifelse((df$불쾌지수>=80),'매우높음', 
+                                     ifelse((df$불쾌지수>=75 & df$불쾌지수<80),'높음',
+                                            ifelse((df$불쾌지수 >= 68 & df$불쾌지수 < 75),'보통', '낮음')))
+          
+     (4) 데이터 타입 변경
+         • as.type(df$컬럼명)
+           ex) df2$y2019 <- as.numeric(df2$y2019)  # as.factor(), as.Date(), as.data.frame(data명)
+            
+     (5) 필요한 데이터만 추출
+         • dplyr > filter
+           ex) df2 <- df %>%
+                      filter(df$암종별 == "모든 암(C00-C96)" & !(연령별 %in% c("계", "연령미상")))
+                       
+     (6) 중복 제거
+         • unique(df$컬럼명)
+           ex) cols = unique(df$세목명)
+  (5) 시각화
+      • ggplot()
+        ex) ggplot(mapping =aes(x=연령대, y=계, fill=성별), data=df2gr) +
+             geom_bar(stat="identity", position=position_dodge()) +
+             ggtitle('연령대별 성별 분석')+
+             theme(plot.title = element_text(hjust = 0.5,size=20,face='bold'))
+      • ggvis()
+        ex) 
+```
+<img src = https://user-images.githubusercontent.com/51871037/215323967-5fa6cb48-9e34-4756-b778-416824af92e7.png>
 
+#### 2. 패키지
+```
+  1) 패키지 설치
+     • install.packages("패키지명")
+     
+  2) 패키지 실행
+     • library("패키지명") 
+  
+  3) 패키지 종류
+     • ggplot2   # 시각화 그래프
+     • lubridate   # 날짜처리
+     • dplyr   # 파이프라인으로 데이터 연결
+     • 
+```
 
 ## 11. 그래프(1) 폰트, plot #6-1~6-17
 
