@@ -415,8 +415,11 @@
              geom_bar(stat="identity", position=position_dodge()) +
              ggtitle('연령대별 성별 분석')+
              theme(plot.title = element_text(hjust = 0.5,size=20,face='bold'))
-      • ggvis()
-        ex) 
+      • ggvis() : 그래프를 겹쳐서 그릴 때 
+        ex) mtcars %>% ggvis(~mpg, ~wt, fill=~cyl) %>% 
+              layer_points() %>% layer_smooths() %>%
+                add_axis("x", title ="MPG", values=c(10:35)) %>%
+                   add_axis("y", title = "WT", subdivide = 4)
 ```
 <img src = https://user-images.githubusercontent.com/51871037/215323967-5fa6cb48-9e34-4756-b778-416824af92e7.png>
 
@@ -434,6 +437,7 @@
      • ggplot2   # 시각화 그래프
      • ggthemes   # 그래프 theme 제공
      • gridExtra   #  여러 그림들을 하나의 plot으로 그려주는 기능
+     • gg
 ```
 
 ## 11. 그래프(1) 폰트, plot #6-1~6-17
