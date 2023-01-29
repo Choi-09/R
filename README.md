@@ -441,7 +441,7 @@
      • ggplot2   # 시각화 그래프
      • ggthemes   # 그래프 theme 제공
      • gridExtra   #  여러 그림들을 하나의 plot으로 그려주는 기능
-     • gg
+     • ggvis   # 그래프를 겹쳐서 그릴 때 
 ```
 
 ## 11. 그래프(1) 폰트, plot #6-1~6-17
