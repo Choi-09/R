@@ -358,38 +358,57 @@
       • table( )   # 빈도표 확인
       • mode( )   # 데이터 내부 값의 형태
       • class( )   # 데이터 전체 타입
-      • typeof( )   # 데이터 내부 값의 타입      
+      • typeof( )   # 데이터 내부 값의 타입    
+      • unique(df$컬럼명)   # 해당 컬럼의 unique값 확인
   
   (4) 데이터 전처리
   
-     (1) 필요한 열 추출
-         • subset()
-           ex) df1 <- subset(df, df$컬럼명 == '컬럼값')
-         • df <- df[c('컬럼명1', '컬럼명2', '컬럼명3', ...)]
-           ex) df2 <- df[df$구분 == "역주행", ]
+     (4-1) 필요한 열 추출
+           • subset()
+             ex) df1 <- subset(df, df$컬럼명 == '컬럼값')
+           • df <- df[c('컬럼명1', '컬럼명2', '컬럼명3', ...)]
+             ex) df2 <- df[df$구분 == "역주행", ]
+           • df <- df[, c('컬럼명1', '컬럼명2', '컬럼명3', ...)]
+             ex) df22 <- df22[, c('암종별', '성별', '발생자수')]
            
-     (2) 열 명 수정
-         • names(df) <- c('컬럼명1', '컬럼명2', '컬럼명3', ...)
-           ex) names(df) <- c('암종별', '성별', '연령별', '2019년', '2019년(십만명)' )
+     (4-2) 열 명 수정
+           • names(df) <- c('컬럼명1', '컬럼명2', '컬럼명3', ...)
+             ex) names(df) <- c('암종별', '성별', '연령별', '2019년', '2019년(십만명)' )
             
-     (3) 그룹핑
-         • df$컬럼명 <- ifelse( 조건1, True일때 값, False일때 값)
-           ex) df$불쾌지수단계 <- ifelse((df$불쾌지수>=80),'매우높음', 
-                                     ifelse((df$불쾌지수>=75 & df$불쾌지수<80),'높음',
-                                            ifelse((df$불쾌지수 >= 68 & df$불쾌지수 < 75),'보통', '낮음')))
+     (4-3) 그룹핑
+           • df$컬럼명 <- ifelse( 조건1, True일때 값, False일때 값)
+             ex) df$불쾌지수단계 <- ifelse((df$불쾌지수>=80),'매우높음', 
+                                       ifelse((df$불쾌지수>=75 & df$불쾌지수<80),'높음',
+                                              ifelse((df$불쾌지수 >= 68 & df$불쾌지수 < 75),'보통', '낮음')))
           
-     (4) 데이터 타입 변경
-         • as.type(df$컬럼명)
-           ex) df2$y2019 <- as.numeric(df2$y2019)  # as.factor(), as.Date(), as.data.frame(data명)
+     (4-4) 데이터 타입 변경
+           • as.type(df$컬럼명)
+             ex) df2$y2019 <- as.numeric(df2$y2019)  # as.factor(), as.Date(), as.data.frame(data명)
             
-     (5) 필요한 데이터만 추출
-         • dplyr > filter
-           ex) df2 <- df %>%
-                      filter(df$암종별 == "모든 암(C00-C96)" & !(연령별 %in% c("계", "연령미상")))
+     (4-5) 필요한 데이터만 추출
+           • dplyr > filter
+             ex) df2 <- df %>%
+                        filter(암종별 != "모든 암(C00-C96)") %>% 
+                              filter(연령별 == "계")
                        
-     (6) 중복 제거
-         • unique(df$컬럼명)
-           ex) cols = unique(df$세목명)
+     (4-6) 중복 제거
+           • unique(df$컬럼명)
+             ex) cols = unique(df$세목명)
+           
+     (4-7) 결측치 제거
+         • na.omit( )
+           ex) df3 <- na.omit(df)
+      
+     (4-8) 결측치 대체
+         • raplace(is.na(df), 0)   # 전체 na를 0으로 대체
+           ex) df <- df %>% replace(is.na(df), 0)
+         • col <- names(df4)[3:6]
+           for(i in col) {
+            temp <- df[,i]  # 모든 열을 돌면서 temp에 담기
+            temp <- ifelse(is.na(temp), 0,temp)   # temp에 na값이 있으면 0, 아니면 기존 temp값.
+            df[,i] <- temp  # 다시 temp를 df에 담기 
+           }
+       
   (5) 시각화
       • ggplot()
         ex) ggplot(mapping =aes(x=연령대, y=계, fill=성별), data=df2gr) +
@@ -410,10 +429,11 @@
      • library("패키지명") 
   
   3) 패키지 종류
-     • ggplot2   # 시각화 그래프
-     • lubridate   # 날짜처리
      • dplyr   # 파이프라인으로 데이터 연결
-     • 
+     • lubridate   # 날짜처리
+     • ggplot2   # 시각화 그래프
+     • ggthemes   # 그래프 theme 제공
+     • gridExtra   #  여러 그림들을 하나의 plot으로 그려주는 기능
 ```
 
 ## 11. 그래프(1) 폰트, plot #6-1~6-17
