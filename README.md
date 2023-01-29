@@ -336,15 +336,14 @@
 ```
 
 
-## 9. 데이터 조작(1)
-#### 1) 내장함수
+## 9. 내장함수
 <img src = https://user-images.githubusercontent.com/51871037/215321205-146f0cb5-410a-46f8-8b12-19029e1fea63.png>
 <img src = https://user-images.githubusercontent.com/51871037/215321257-ea5f1c6a-e7db-4cc3-a14a-a1d4c3c7c504.png>
 <img src = https://user-images.githubusercontent.com/51871037/215321585-d29e9936-097b-4512-8db5-3e6c19d685bf.png>
 <img src = https://user-images.githubusercontent.com/51871037/215321596-e3e97db9-16e2-4541-875b-a5d7b587d93f.png>
 <img src = https://user-images.githubusercontent.com/51871037/215321602-788cbb50-b808-4e58-a47f-55fdd44f9243.png>
 
-## 10. 데이터 조작(2) EDA, 패키지   #8
+## 10. EDA, 패키지   #8
 - 분석절차
 
 
