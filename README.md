@@ -344,7 +344,11 @@
 <img src = https://user-images.githubusercontent.com/51871037/215321602-788cbb50-b808-4e58-a47f-55fdd44f9243.png>
 
 ## 10. EDA, 패키지
-#### 1) 분석절차
+#### 1) EDA(Exploratory Data Analysis, 탐색적 데이터 분석)
++ raw data 의 description, dictionary 를 통해 데이터의 각 column들과 row의 의미 이해하기.
++ 결측치 처리 및 데이터필터링.
++ 누구나 이해하기 쉬운 시각화.
+
 ```
   (1) 파일(데이터) 읽어오기
       • data <- read.csv(path = '파일명.csv', header = T, sheet = 'Sheet2', fileEncoding = 'euc-kr', sep=',')
