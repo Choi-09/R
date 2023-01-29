@@ -412,9 +412,9 @@
   (5) 시각화
       • ggplot()
         ex) ggplot(mapping =aes(x=연령대, y=계, fill=성별), data=df2gr) +
-             geom_bar(stat="identity", position=position_dodge()) +
-             ggtitle('연령대별 성별 분석')+
-             theme(plot.title = element_text(hjust = 0.5,size=20,face='bold'))
+               geom_bar(stat="identity", position=position_dodge()) +
+                 ggtitle('연령대별 성별 분석')+
+                   theme(plot.title = element_text(hjust = 0.5,size=20,face='bold'))
       • ggvis() : 그래프를 겹쳐서 그릴 때 
         ex) mtcars %>% ggvis(~mpg, ~wt, fill=~cyl) %>% 
               layer_points() %>% layer_smooths() %>%
